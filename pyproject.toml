@@ -22,9 +22,9 @@ requires-python = "<4.0,>=3.10"
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/flathub-infra/flathub-repro-checker"
-Repository = "https://github.com/flathub-infra/flathub-repro-checker.git"
-Issues = "https://github.com/flathub-infra/flathub-repro-checker/issues"
+Homepage = "https://github.com/OpenPak/flathub-repro-checker"
+Repository = "https://github.com/OpenPak/flathub-repro-checker.git"
+Issues = "https://github.com/OpenPak/flathub-repro-checker/issues"
 
 [project.scripts]
 flathub-repro-checker = "flathub_repro_checker.__main__:main"
