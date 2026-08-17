@@ -43,7 +43,7 @@ def test_full_repro_check_flow(appid: str, allowed_statuses: set[str]) -> None:
 
     if not seccomp_path.exists():
         urllib.request.urlretrieve(
-            "https://raw.githubusercontent.com/flathub-infra/vorarbeiter/refs/heads/main/flatpak.seccomp.json",
+            "https://raw.githubusercontent.com/openpak/vorarbeiter/refs/heads/main/flatpak.seccomp.json",
             seccomp_path,
         )
 
