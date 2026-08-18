@@ -112,3 +112,4 @@ uv run mypy .
 uv run pytest -vvv
 ```
 
+test main
