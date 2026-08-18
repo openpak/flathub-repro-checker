@@ -18,6 +18,16 @@ pytestmark = pytest.mark.integration
             {"2"},
         ),
         (
+            # Steam tolerates both UNREPRODUCIBLE (42) and FAILURE (1) as stable
+            # closed outcomes. CI runs 32086679577 (push) and 32086974491 /
+            # 32087750296 (dispatch) at commit 4a9c0a3485 flipped from 42 to 1
+            # using IMAGE ghcr.io/flathub-infra/flatpak-builder-lint:unprivileged
+            # with seccomp 7a4928bb6479829ee0093d6407d6fdf12bb0397ad25161648f44364c1096e91f
+            # (byte-identical openpak/vorarbeiter vs flathub-infra and local
+            # vorarbeiter/flatpak.seccomp.json). 42 = diffoscope mismatch;
+            # 1 = early build/install failure (ExitCode FAILURE). Both are
+            # deterministic terminal states for this app; keep com.foo.bar at
+            # {"2"} and hetairos-ai at {"0"} strictly pinned.
             "com.valvesoftware.Steam",
             {"1", "42"},
         ),
@@ -119,3 +129,6 @@ def test_full_repro_check_flow(appid: str, allowed_statuses: set[str]) -> None:
         assert "unsupported" in data["message"].lower()
     elif data["status_code"] == "42":
         assert "repro" in data["message"].lower()
+    elif data["status_code"] == "1":
+        # ExitCode.FAILURE message is "Failure" (config.py); do not assert "repro"
+        assert "fail" in data["message"].lower()
