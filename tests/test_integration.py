@@ -19,7 +19,7 @@ pytestmark = pytest.mark.integration
         ),
         (
             "com.valvesoftware.Steam",
-            {"42"},
+            {"1", "42"},
         ),
         (
             "io.github.N3kosempai.hetairos-ai",
