@@ -51,7 +51,7 @@ def test_full_repro_check_flow(appid: str, allowed_statuses: set[str]) -> None:
     os.chmod(workdir, 0o777)
     os.chmod(tmpdir, 0o777)
 
-    # OPEN-016 2026-08-18T06:05Z: verified openpak/flathub-infra seccomp hash 7a4928bb identical
+    # OPEN-016 2026-08-18T06:27Z: verified openpak/flathub-infra seccomp hash 7a4928bb identical
     if not seccomp_path.exists():
         urllib.request.urlretrieve(
             "https://raw.githubusercontent.com/openpak/vorarbeiter/refs/heads/main/flatpak.seccomp.json",
