@@ -49,7 +49,7 @@ def test_full_repro_check_flow(appid: str, allowed_statuses: set[str]) -> None:
 
     image = os.environ.get(
         "IMAGE",
-        "ghcr.io/flathub-infra/flatpak-builder-lint:unprivileged",
+        "ghcr.io/openpak/flatpak-builder-lint:unprivileged",
     )
 
     env = {
