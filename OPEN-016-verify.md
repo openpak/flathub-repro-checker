@@ -25,3 +25,4 @@
 - `python3 verify-open016.py --online` PASS (expects UNAUTHORIZED for keep-upstream)
 - Break-test: temp repoint ci.yml to openpak → FAIL image-env, restored → PASS
 - `flathub-repro-checker` unit tests: 46 passed, `ruff check` PASS, `mypy` PASS, no GHCR_TOKEN
+keep-upstream verified
